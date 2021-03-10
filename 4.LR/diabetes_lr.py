@@ -10,6 +10,9 @@ FEAT_COLS = ["AGE", "SEX", "BMI", "BP", "S1", "S2", "S3", "S4", "S5", "S6"]
 
 
 def plot_feat_and_Y(data):
+    """
+        绘图
+    """
     feat_cols = ["AGE", "SEX", "BMI", "BP", "S1", "S2", "S3", "S4", "S5", "S6"]
     fig, axes = plt.subplots(2, 5, figsize=(10, 10))
     for i, feat in enumerate(feat_cols):

@@ -57,13 +57,7 @@ def do_pair_plot_for_iris(iris_data):
 
 def plot_knn_boundary(knn_model, X, y, fig_title, save_fig):
     """
-        缁樺埗浜岀淮骞抽潰鐨刱NN杈圭晫
-        鍙傛暟锛�
-            knn_mode:   璁粌濂界殑kNN妯″瀷
-            X:          鏁版嵁闆嗙壒寰�
-            y:          鏁版嵁闆嗘爣绛�
-            fig_title:  鍥惧儚鍚嶇О
-            save_fig:   淇濆瓨鍥惧儚鐨勮矾寰�
+        绘制分类边界
     """
     h = .02  # step size in the mesh
 
@@ -97,12 +91,10 @@ def plot_knn_boundary(knn_model, X, y, fig_title, save_fig):
 
 def plot_feat_and_price(house_data):
     """
-        缁樺埗姣忓垪鐗瑰緛涓庢埧浠风殑鍏崇郴
-        鍙傛暟锛�
-            -house_data: 鎴垮眿浠锋牸鏁版嵁闆�
+        绘制房价与其他指标的散点图
     """
     feat_cols = ['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'sqft_above', 'sqft_basement']
-    fig, axes = plt.subplots(2, 3, figsize=(15, 8))
+    fig, axes = plt.subplots(2, 3, figsize=(15, 8))     # 2 rows,3 cols
     for i, feat_col in enumerate(feat_cols):
         house_data[[feat_col, 'price']].plot.scatter(x=feat_col, y='price', alpha=0.5,
                                                      ax=axes[int(i / 3), i - 3 * int(i / 3)])
